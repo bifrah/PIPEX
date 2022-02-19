@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:22:51 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/15 16:57:12 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/19 18:38:39 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char			*ft_strnstr(const char *large, const char *small,
 char			*ft_strjoin(char const *s1, char const *s2);
 char			**ft_split(char const *s, char c);
 void			free_split(char **array);
+char			*ft_strdup(const char *src);
 int				parse(int argc, char **envp);
 int				init_p(t_p *p, int argc, char **argv, char **envp);
 void			fillbincmd(t_p *p, char *cmd);

@@ -13,6 +13,7 @@ SRC_NAME =	main.c \
 			ft_print.c \
 			ft_split.c \
 			ft_strjoin.c \
+			ft_stsrdup.c \
 			ft_strnstr.c \
 			util00.c \
 			bin.c \
