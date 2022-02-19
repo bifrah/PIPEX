@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:31:07 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/15 15:08:28 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/19 18:47:22 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*checkcmd(t_p *p, char *cmd)
 		{
 			if (access(cmd, F_OK) != 0)
 				return (printerror("No such file or directory: ", cmd, "\n"));
-			return (ft_strjoin(cmd, ""));
+			return (ft_strdup(cmd));
 		}
 		else
 			return (findbin(p, cmd));
