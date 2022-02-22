@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 03:54:52 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/19 16:58:02 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/22 02:23:42 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	child2(t_p *p)
 			exit(127);
 		}
 	}
-	else if (p->binpath == NULL)
-		ft_putstr_fd("Command not found : ""\n", 2);
 	freecmdbin(p);
 	exit(127);
 }
@@ -53,8 +51,6 @@ void	child1(t_p *p)
 			exit(127);
 		}
 	}
-	else if (p->binpath == NULL)
-		ft_putstr_fd("Command not found : ""\n", 2);
 	freecmdbin(p);
 	exit(127);
 }
