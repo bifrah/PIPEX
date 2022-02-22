@@ -1,5 +1,5 @@
 NAME = pipex
-CC = gcc
+CC = clang
 PARAMS = -Wall -Wextra -Werror
 
 INC_PATH = includes/
