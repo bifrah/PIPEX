@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 03:54:52 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/22 02:27:36 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/22 02:29:49 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	child1(t_p *p)
 			exit(127);
 		}
 	}
-	else if (p->binpath == NULL && access(p->argv[1], F_OK) == 0)
+	else if (p->binpath == NULL && access(p->argv[1], F_OK | R_OK) == 0)
 		ft_putstr_fd("Command not found : ""\n", 2);
 	freecmdbin(p);
 	exit(127);
