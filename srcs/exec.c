@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 03:54:52 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/23 15:35:32 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 17:22:00 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	child2(t_p *p)
 	{
 		if (execve(p->binpath, p->cmd, p->envp) < 0)
 		{
-			perrorstring01(p->cmd[0]);
+			if (p->binpath[0] != '.' && p->binpath[0] != '/'
+				&& p->binpath[0] != '~')
+				perrorstring01(p->cmd[0]);
 			freecmdbin(p);
 			exit(127);
 		}
@@ -48,7 +50,9 @@ void	child1(t_p *p)
 	{
 		if (execve(p->binpath, p->cmd, p->envp) < 0)
 		{
-			perrorstring01(p->cmd[0]);
+			if (p->binpath[0] != '.' && p->binpath[0] != '/'
+				&& p->binpath[0] != '~')
+				perrorstring01(p->cmd[0]);
 			freecmdbin(p);
 			exit(127);
 		}
