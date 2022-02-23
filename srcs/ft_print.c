@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:35:52 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/19 17:00:14 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 14:55:34 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,19 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-int	perrorstring(char *str)
+int	perrorstring01(char *str)
 {
-	ft_putstr_fd(strerror(errno), 2);
-	ft_putstr_fd(": ", 2);
 	ft_putstr_fd(str, 2);
+	ft_putstr_fd(": ", 2);
+	ft_putstr_fd(strerror(errno), 2);
 	ft_putstr_fd("\n", 2);
+	return (EXIT_FAILURE);
+}
+
+int	perrorstring02(char *str)
+{
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd(": command not found\n", 2);
 	return (EXIT_FAILURE);
 }
 

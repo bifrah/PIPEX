@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:22:51 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/19 18:38:39 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 14:52:37 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ typedef struct s_p {
 
 void			printtab(char **tab);
 void			ft_putstr_fd(char *s, int fd);
-int				perrorstring(char *str);
+int				perrorstring01(char *str);
+int				perrorstring02(char *str);
 char			*printerror(char *str1, char *str2, char *str3);
 unsigned int	ft_strlen(const char *str);
 unsigned int	lenforpath(const char *str, int i);

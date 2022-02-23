@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:20:35 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/15 16:57:17 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 14:53:14 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	main(int argc, char **argv, char **envp)
 	if (p.infile == -1)
 	{
 		p.exit_status = 1;
-		perrorstring(argv[1]);
+		perrorstring01(argv[1]);
 	}
 	p.outfile = open(p.argv[4], O_CREAT | O_WRONLY | O_TRUNC, 00666);
 	if (p.outfile == -1)
-		perrorstring(argv[4]);
+		perrorstring01(argv[4]);
 	execcmds(&p);
 	return (0);
 }
