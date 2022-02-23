@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:31:07 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/19 18:47:22 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 15:39:03 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*findbin(t_p *p, char *cmd)
 		}
 		free_split(paths);
 	}
-	return (printerror("Command not found: ", cmd, "\n"));
+	return (printerror(cmd, ": command not found", "\n"));
 }
 
 char	*checkcmd(t_p *p, char *cmd)
@@ -62,7 +62,7 @@ char	*checkcmd(t_p *p, char *cmd)
 		if (cmd[0] == '~' || cmd[0] == '.' || cmd[0] == '/')
 		{
 			if (access(cmd, F_OK) != 0)
-				return (printerror("No such file or directory: ", cmd, "\n"));
+				return (printerror(cmd, ": No such file or directory", "\n"));
 			return (ft_strdup(cmd));
 		}
 		else

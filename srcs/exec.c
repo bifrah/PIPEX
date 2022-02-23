@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 03:54:52 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/23 14:53:44 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/23 15:35:32 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	child2(t_p *p)
 	if (p->pipe_fd[READ] == -1 || p->outfile == -1)
 		exit(EXIT_FAILURE);
 	fillbincmd(p, p->argv[3]);
-	if (p->binpath != NULL && access(p->argv[1], F_OK | R_OK) == 0)
+	if (p->binpath != NULL && access(p->argv[4], F_OK | W_OK) == 0)
 	{
 		if (execve(p->binpath, p->cmd, p->envp) < 0)
 		{
@@ -29,11 +29,8 @@ void	child2(t_p *p)
 			exit(127);
 		}
 	}
-	else if (p->binpath == NULL && access(p->argv[4], F_OK) == 0)
+	else if (p->argv[3][0] == '\0' && access(p->argv[4], F_OK) == 0)
 		ft_putstr_fd(" : command not found\n", 2);
-	else if (access(p->argv[1], F_OK | R_OK) == -1)
-		perrorstring02(p->cmd[0]);
-		// ft_putstr_fd(" : command not found\n", 2);
 	freecmdbin(p);
 	exit(127);
 }
@@ -56,7 +53,7 @@ void	child1(t_p *p)
 			exit(127);
 		}
 	}
-	else if (p->binpath == NULL && access(p->argv[1], F_OK | R_OK) == 0)
+	else if (p->argv[2][0] == '\0' && access(p->argv[1], F_OK | R_OK) == 0)
 		ft_putstr_fd(" : command not found\n", 2);
 	freecmdbin(p);
 	exit(127);
