@@ -6,11 +6,23 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:31:07 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/24 23:24:18 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/25 00:29:30 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+static void	checkbusy(t_p *p)
+{
+	if (p->tmpcmd1 != NULL)
+	{
+		if (ft_strnstr(p->tmpcmd1, p->argv[4], ft_strlen(p->argv[4])) != NULL
+			&& ft_strnstr(p->argv[4],
+				p->tmpcmd1, ft_strlen(p->tmpcmd1)) != NULL)
+			printerror(p->argv[4], ": Text file busy", "\n");
+		free(p->tmpcmd1);
+	}
+}
 
 char	**getpath(t_p *p)
 {
@@ -63,6 +75,11 @@ char	*checkcmd(t_p *p, char *cmd)
 		{
 			if (access(cmd, F_OK) != 0)
 				return (printerror(cmd, ": No such file or directory", "\n"));
+			if (p->tmpcmd1 == NULL)
+			{
+				p->tmpcmd1 = ft_strdup(p->cmd[0]);
+				checkbusy(p);
+			}
 			return (ft_strdup(cmd));
 		}
 		else

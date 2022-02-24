@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:20:35 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/23 14:53:14 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/25 00:14:08 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	init_p(t_p *p, int argc, char **argv, char **envp)
 	p->exit_status = 0;
 	p->binpath = NULL;
 	p->cmd = NULL;
+	p->tmpcmd1 = NULL;
 	return (0);
 }
 

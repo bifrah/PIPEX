@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:22:51 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/23 14:52:37 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/25 00:00:37 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_p {
 	int		exit_status;
 	char	*binpath;
 	char	**cmd;
+	char	*tmpcmd1;
 	int		infile;
 	int		outfile;
 	int		pipe_fd[2];
