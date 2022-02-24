@@ -55,5 +55,6 @@ dkms.conf
 a
 infile
 outfile
+out_no_w
 ls
 pipex
