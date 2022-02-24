@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:31:07 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/23 15:39:03 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/02/24 23:24:18 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,12 @@ void	fillbincmd(t_p *p, char *cmd)
 		if (cmd[0] != '\0')
 		{
 			p->cmd = ft_split(cmd, ' ');
+			if (p->cmd[1] == NULL)
+			{
+				free(p->cmd[0]);
+				p->cmd[0] = NULL;
+				p->cmd[0] = ft_strdup(p->argv[2]);
+			}
 			if (p->cmd != NULL)
 				p->binpath = checkcmd(p, p->cmd[0]);
 		}
