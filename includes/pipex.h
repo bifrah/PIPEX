@@ -6,7 +6,7 @@
 /*   By: bifrah <bifrah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:22:51 by bifrah            #+#    #+#             */
-/*   Updated: 2022/02/25 00:00:37 by bifrah           ###   ########.fr       */
+/*   Updated: 2022/03/14 16:08:16 by bifrah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_p {
 	int		pipe_fd[2];
 }			t_p;
 
-void			printtab(char **tab);
 void			ft_putstr_fd(char *s, int fd);
 int				perrorstring01(char *str);
 int				perrorstring02(char *str);
